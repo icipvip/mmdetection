@@ -1,4 +1,5 @@
 import warnings
+import time
 
 import matplotlib.pyplot as plt
 import mmcv
@@ -119,9 +120,17 @@ def inference_detector(model, img):
         data['img_metas'] = data['img_metas'][0].data
 
     # forward the model
+    
+    torch.cuda.synchronize()
+    start_time = time.perf_counter()
+    
     with torch.no_grad():
         result = model(return_loss=False, rescale=True, **data)[0]
-    return result
+    
+    torch.cuda.synchronize()
+    inf_time = time.perf_counter() - start_time
+    
+    return result, inf_time
 
 
 async def async_inference_detector(model, img):
