@@ -31,7 +31,7 @@ If you face any installation issues, please follow the [mmdetection installation
 Suppose you want to run prediction on a folder of images, and store the results in submission format. Then cd into the `teamzodiac` folder of this codebase and run the following command:
 ~~~
 cd teamzodiac
-python vipcup/predict_imagefolder.py vipcup/finalmodel/epoch_2.pth  ${path_to_imagefolder}$  ${path_to_resultfolder}$
+python vipcup/predict_imagefolder.py vipcup/custom_gfocal.py vipcup/finalmodel/epoch_2.pth  ${path_to_imagefolder}$  ${path_to_resultfolder}$
 ~~~
 - replace  `${path_to_imagefolder}$`  with the complete path to the folder containing all the images.
 - replace  `${path_to_resultfolder}$`  with the desired path to the folder where the results will be stored. The folder will be created if it doesn't exist.
