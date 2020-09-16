@@ -81,7 +81,7 @@ To compactly organize the data in train and test set we use the script `organize
 
 ~~~
 cd teamzodiac
-python organize_data.py  ${path_to_icip_dataset}$  ./data
+python vipcup/organize_data.py  ${path_to_icip_dataset}$  ./data
 ~~~
 replace `${path_to_icip_dataset}$` with the complete path to where the `ICIP2020-fisheye-dataset-30072020` folder is located.
 
