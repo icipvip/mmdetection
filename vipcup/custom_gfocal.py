@@ -2,7 +2,7 @@ _base_ = '../configs/gfl/gfl_r50_fpn_mstrain_2x_coco.py'
 
 dataset_type = 'CocoDataset'
 classes = ('vehicle',)
-data_root = '../data/'
+data_root = 'data/'
 
 data = dict(
     samples_per_gpu=8,
@@ -59,4 +59,4 @@ checkpoint_config = dict(
 )
 
 load_from = 'http://download.openmmlab.com/mmdetection/v2.0/gfl/gfl_r50_fpn_mstrain_2x_coco/gfl_r50_fpn_mstrain_2x_coco_20200629_213802-37bb1edc.pth'
-work_dir = '../logdir'
+work_dir = 'vipcup/logdir'
