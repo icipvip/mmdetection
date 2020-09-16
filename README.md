@@ -62,20 +62,20 @@ If you want to reproduce our training setup, you will need to organize the datas
 We assume that the privoded dataset is formatted as follows:
 ~~~
 ICIP2020-fisheye-dataset-30072020
-    |--- fisheye-day-30072020
-        |--- images
-            |--- train
-        |--- labels
-            |--- train
-    |--- fisheye-night-30072020
-        |--- images
-        |--- labels
-    |--- fisheye-day-test-30072020
-        |--- images
-        |--- labels
-    |--- fisheye-night-test-30072020
-        |--- images
-        |--- labels
+|--- fisheye-day-30072020
+    |--- images
+        |--- train
+    |--- labels
+        |--- train
+|--- fisheye-night-30072020
+    |--- images
+    |--- labels
+|--- fisheye-day-test-30072020
+    |--- images
+    |--- labels
+|--- fisheye-night-test-30072020
+    |--- images
+    |--- labels
 ~~~
 To compactly organize the data in train and test set we use the script `organize_data.py`. Please cd into the `teamzodiac` directory of this codebase and run the follwoing command:
 
