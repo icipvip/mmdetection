@@ -2,10 +2,8 @@
 
 The code was tested with Python 3.6, CUDA 10.1, PyTorch 1.5.0 and torchvision 0.6.0.
 
-1. Install filterpy, lap, pandas
+1. Install pandas
 ~~~
-pip install filterpy==1.4.5
-pip install lap==0.4.0
 pip install pandas
 ~~~
 2. Install pycocotools.
@@ -159,4 +157,4 @@ We biuld on top of MMDetection codebase. Thanks MMDetection team for the wonderf
 
 ## Reference
 - Generalized Focal Loss. https://arxiv.org/abs/2006.04388
-- Simple Online and Realtime Tracking. https://arxiv.org/abs/1602.00763
+- MMDetection: Open MMLab Detection Toolbox and Benchmark. https://arxiv.org/abs/1906.07155
