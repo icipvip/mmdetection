@@ -54,7 +54,7 @@ Done image [393/ 393]
 Overall speed: 19.6 img/s
 ~~~
 
-## Reproduce
+## Reproduce Training
 
 If you want to reproduce our training setup, you will need to organize the dataset.
 
@@ -147,12 +147,36 @@ teamzodiac
 | ...
 ~~~
 
-### Training
+### Train
 At this point the data should be properly organized. Assuming you are in the `teamzodiac` directory, run the following command to reproduce our training results:
 ~~~
 python tools/train.py vipcup/custom_gfocal.py --seed 1 --deterministic
 ~~~
 This will train the network for 5 epochs. After each epoch, it runs evaluation on the test set and saves the checkpoint in `vipcup/logdir` folder. We found that the best result is achieved after epoch 2. This is the model we use for our final prediction and we save the weights in `vipcup/finalmodel` folder.
+
+## (Extra-1) Tracking
+Given a folder of images, you can create tracking videos. To do so, `cd` into the `teamzodiac` directory and run the following command:
+~~~
+python vipcup/create_trackvideo.py vipcup/custom_gfocal.py vipcup/finalmodel/epoch_2.pth  ${path_to_imagefolder}$  ${path_to_videofolder}$
+~~~
+
+- replace  `${path_to_imagefolder}$`  with the complete path to the folder containing all the images.
+- replace  `${path_to_videofolder}$`  with the desired path to the folder where the tracking videos will be stored. The folder will be created if it doesn't exist.
+
+Notice that, to create tracking videos we assume that the filenames in the imagefolder follow a common format. That is: the last underscore separates the video name and frame id. For example: if a filename is `01_fisheye_day_test_000058.jpg`, we asssume that this image belongs to a video named `01_fisheye_day_test` and it is the `58th` frame of that video. If your images in the imagefolder doesn't follow this naming convention, the tracker may produce ambigiuos output.
+
+We submit example tracking videos along with our code submission. We used the following command to create the those videos:
+~~~
+python vipcup/create_trackvideo.py vipcup/custom_gfocal.py vipcup/finalmodel/epoch_2.pth data/test/images vipcup/track_videos
+~~~
+This creates the following 5 track videos in the `vipcup/track_videos` directory:
+~~~
+01_fisheye_day_test.avi
+02_fisheye_day_test.avi
+03_fisheye_day_test.avi
+CLIP_20200628-210253.avi
+CLIP_20200628-210808.avi
+~~~
 
 ## Acknowledgement
 We biuld on top of MMDetection codebase. Thanks MMDetection team for the wonderful open source project!
