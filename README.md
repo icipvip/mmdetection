@@ -2,7 +2,7 @@
 
 The code was tested with Python 3.6, CUDA 10.1, PyTorch 1.5.0 and torchvision 0.6.0.
 
-1. Install filterpy, lap, pandas
+1. Install filterpy, lap, pandas.
 ~~~
 pip install filterpy==1.4.5
 pip install lap==0.4.0
