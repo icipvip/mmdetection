@@ -44,7 +44,7 @@ lr_config = dict(
 )
 
 test_cfg = dict(
-    score_thr=0.5
+    score_thr=0.4
 )
 
 log_config = dict(
